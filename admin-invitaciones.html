@@ -133,8 +133,8 @@
         </div>
         <div class="card-body">
           <div class="mb-3">
-            <label for="urlBase" class="form-label">URL Base para las invitaciones</label>
-            <input type="text" class="form-control" id="urlBase" value="https://mi-boda.com/invitacion/" required>
+            <label for="https://lscrob.github.io/invitacion-boda/invitaciones.html?id=" class="form-label">URL Base para las invitaciones</label>
+            <input type="text" class="form-control" id="https://lscrob.github.io/invitacion-boda/invitaciones.html?id=" value="https://mi-boda.com/invitacion/" required>
             <div class="form-text">Esta será la base para todos los enlaces de invitación.</div>
           </div>
           <button id="btnGuardarConfig" class="btn btn-primary">Guardar Configuración</button>
@@ -162,7 +162,7 @@
       // Cargar configuración
       const config = JSON.parse(localStorage.getItem('configInvitaciones')) || {};
       if (config.urlBase) {
-        document.getElementById('urlBase').value = config.urlBase;
+        document.getElementById('https://lscrob.github.io/invitacion-boda/invitaciones.html?id=').value = config.urlBase;
       }
     });
 
@@ -176,7 +176,7 @@
       const id = generarIdUnico();
       
       // Obtener URL base
-      const urlBase = document.getElementById('urlBase').value;
+      const urlBase = document.getElementById('https://lscrob.github.io/invitacion-boda/invitaciones.html?id=').value;
       const enlace = urlBase + id;
       
       // Crear objeto de invitación
@@ -318,7 +318,7 @@
     }
 
     function guardarConfiguracion() {
-      const urlBase = document.getElementById('urlBase').value;
+      const urlBase = document.getElementById('https://lscrob.github.io/invitacion-boda/invitaciones.html?id=').value;
       localStorage.setItem('configInvitaciones', JSON.stringify({ urlBase }));
       alert('Configuración guardada correctamente.');
     }
