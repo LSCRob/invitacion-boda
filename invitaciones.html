@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitación de Boda - Roberto y Joselyn</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts: Heleny (usando import de fonts.cdnfonts.com) -->
+  <link href="https://fonts.cdnfonts.com/css/heleny" rel="stylesheet">
+  <!-- Fuente Banday – Modern Calligraphy desde fonts.cdnfonts.com -->
+  <link href="https://fonts.cdnfonts.com/css/banday" rel="stylesheet">
+  <style>
+    :root {
+      --verde-olivo-oscuro: #6f5c23;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fffad2;
+      color: var(--verde-olivo-oscuro);
+      text-align: center;
+      font-weight: 700;
+    }
+
+    /* --- Título y nombres con fuente Banday y gradiente oro --- */
+    .titulo-boda {
+      font-family: 'Banday', cursive, sans-serif !important;
+      font-style: italic;
+      font-weight: 900;
+      background: linear-gradient(180deg, #6f5c23 0%, #fce837 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+      text-align: center;
+      line-height: 1.1;
+      margin-bottom: 0.2em;
+      white-space: pre-line;
+      margin-top: 0;
+      margin-left: 0;
+      margin-right: 0;
+      padding: 0;
+      border: none;
+      box-shadow: none;
+    }
+    .nombres-boda {
+      font-family: 'Banday', cursive, sans-serif !important;
+      font-style: italic;
+      font-weight: 900;
+      background: linear-gradient(180deg, #6f5c23 0%, #fce837 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+      text-align: center;
+      line-height: 1.1;
+      margin-top: 0.2em;
+      margin-bottom: 0;
+      white-space: pre-line;
+      padding: 0;
+      border: none;
+      box-shadow: none;
+    }
+    /* Tamaños responsivos para PC y móvil */
+    .titulo-boda { font-size: 4vw; }
+    .nombres-boda { font-size: 3vw; }
+
+    @media (max-width: 768px) {
+      .titulo-boda { font-size: 4.5rem !important; }
+      .nombres-boda { font-size: 3.5rem !important; }
+    }
+
+    header {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--verde-olivo-oscuro);
+      text-shadow: 2px 2px 6px rgba(255,255,255,0.2);
+    }
+
+    #carruselBoda {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .carousel-inner {
+      height: 100%;
+    }
+
+    .carousel-item {
+      height: 100%;
+    }
+
+    .carousel-item img {
+      object-fit: cover;
+      filter: brightness(0.6);
+    }
+
+    header h1 {
+      font-size: 5rem;
+      color: var(--verde-olivo-oscuro);
+      font-style: italic;
+      font-weight: 900;
+      background: rgba(255,255,255,0.7);
+      border-radius: 20px;
+      padding: 30px 60px;
+      margin: 0;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      font-family: 'Banday', cursive, sans-serif; /* Fuente Banday */
+    }
+
+    h2, h3, section, label, input, button, #countdown, .timeline, .timeline h3, .timeline p {
+      color: var(--verde-olivo-oscuro) !important;
+      font-weight: 700 !important;
+    }
+
+    section {
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    #countdown {
+      font-size: 2rem;
+      margin: 20px 0;
+      font-weight: 700;
+    }
+
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+      border-radius: 10px;
+    }
+
+    .timeline {
+      text-align: left;
+      background: #a8b389;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .timeline h3 {
+      font-weight: 700;
+    }
+
+    a.boton, button.boton {
+      padding: 12px;
+      font-size: 1rem;
+      border-radius: 5px;
+      background: var(--verde-olivo-oscuro);
+      color: white !important;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+      font-weight: 700;
+    }
+
+    a.boton:hover, button.boton:hover {
+      background: #2c3817;
+    }
+
+    input, label {
+      font-weight: 700;
+      color: var(--verde-olivo-oscuro);
+    }
+
+    footer {
+      margin-top: 30px;
+      padding: 20px;
+      background: var(--verde-olivo-oscuro);
+      color: white;
+      font-weight: 400;
+    }
+
+    @media(max-width:768px){
+      header h1 { font-size: 2.5rem; padding: 15px 10px; }
+      #countdown { font-size: 1.5rem; }
+      /* Ajuste SOLO para móvil: texto del header mucho más grande */
+      header span[style*="font-size: 4vw"] {
+        font-size: 4.5rem !important;
+      }
+      header span[style*="font-size: 3vw"] {
+        font-size: 3.5rem !important;
+      }
+    }
+
+    /* Estilos para el separador decorativo */
+    .separador-decorativo {
+      margin: 0;
+      padding: 0;
+      line-height: 0;
+      background: transparent;
+    }
+    
+    /* Mensaje personalizado para el invitado */
+    .mensaje-personalizado {
+      background: rgba(111, 92, 35, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div id="carruselBoda" class="carousel slide h-100" data-bs-ride="carousel" style="position:absolute; width:100%; height:100%; z-index:1;">
+      <div class="carousel-inner h-100">
+        <div class="carousel-item active h-100">
+          <img src="https://i.imgur.com/PB4gBnG.jpg" class="d-block w-100 h-100" style="object-fit:cover; filter:brightness(0.6);" alt="Imagen 1">
+        </div>
+        <div class="carousel-item h-100">
+          <img src="https://i.imgur.com/uR5Jxvn.jpg" class="d-block w-100 h-100" style="object-fit:cover; filter:brightness(0.6);" alt="Imagen 2">
+        </div>
+        <div class="carousel-item h-100">
+          <img src="https://i.imgur.com/F7LlK8v.jpg" class="d-block w-100 h-100" style="object-fit:cover; filter:brightness(0.6);" alt="Imagen 3">
+        </div>
+      </div>
+    </div>
+    <div style="position:relative; z-index:2; width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+      <div style="
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+      ">
+        <span class="titulo-boda">
+          ¡Nuestra<br>Boda!
+        </span>
+        <span class="nombres-boda">
+          Roberto y Joselyn
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <!-- Mensaje personalizado para el invitado -->
+    <div class="mensaje-personalizado" id="mensajePersonalizado">
+      <p>¡Hola <span id="nombreInvitado">Invitado</span>!</p>
+      <p id="textoMensajePersonalizado">Estamos muy emocionados de compartir este día tan especial contigo.</p>
+    </div>
+    
+    <h2>22 de noviembre de 2025</h2>
+    <div style="font-size:1.7rem; font-weight:700; color:var(--verde-olivo-oscuro); margin-top:0.2em;">
+      5:00 PM
+    </div>
+  </section>
+
+  <!-- Separador decorativo -->
+  <div class="separador-decorativo">
+    <svg viewBox="0 0 1200 100" preserveAspectRatio="none" style="width:100%;height:70px;display:block;">
+      <path d="M0,60 Q100,20 200,60 Q300,100 400,60 Q500,20 600,60 Q700,100 800,60 Q900,20 1000,60 Q1100,100 1200,60" 
+        stroke="#fce837" stroke-width="6" fill="none"/>
+      <path d="M0,80 Q100,40 200,80 Q300,120 400,80 Q500,40 600,80 Q700,120 800,80 Q900,40 1000,80 Q1100,120 1200,80" 
+        stroke="#6f5c23" stroke-width="3" fill="none" opacity="0.5"/>
+    </svg>
+  </div>
+
+  <section>
+    <h2>Faltan:</h2>
+    <div id="countdown"></div>
+    
+    <!-- Separador añadido entre la cuenta regresiva y el código de vestimenta -->
+    <div class="separador-decorativo" style="margin: 30px 0;">
+      <svg viewBox="0 0 1200 30" preserveAspectRatio="none" style="width:100%;height:30px;display:block;">
+        <path d="M0,15 Q100,5 200,15 Q300,25 400,15 Q500,5 600,15 Q700,25 800,15 Q900,5 1000,15 Q1100,25 1200,15" 
+          stroke="#fce837" stroke-width="4" fill="none"/>
+        <path d="M0,20 Q100,10 200,20 Q300,30 400,20 Q500,10 600,20 Q700,30 800,20 Q900,10 1000,20 Q1100,30 1200,20" 
+          stroke="#6f5c23" stroke-width="2" fill="none" opacity="0.5"/>
+      </svg>
+    </div>
+    
+    <p style="font-size:1.2rem; font-weight:700; color:var(--verde-olivo-oscuro); margin:0; margin-top:20px;">
+      Código de vestimenta: Formal <span style="font-weight:400;">(No ropa blanca).</span>
+    </p>
+  </section>
+
+  <!-- Separador decorativo -->
+  <div class="separador-decorativo">
+    <svg viewBox="0 0 1200 100" preserveAspectRatio="none" style="width:100%;height:70px;display:block;">
+      <path d="M0,60 Q100,20 200,60 Q300,100 400,60 Q500,20 600,60 Q700,100 800,60 Q900,20 1000,60 Q1100,100 1200,60" 
+        stroke="#fce837" stroke-width="6" fill="none"/>
+      <path d="M0,80 Q100,40 200,80 Q300,120 400,80 Q500,40 600,80 Q700,120 800,80 Q900,40 1000,80 Q1100,120 1200,80" 
+        stroke="#6f5c23" stroke-width="3" fill="none" opacity="0.5"/>
+    </svg>
+  </div>
+
+  <section>
+    <h2>Ubicación</h2>
+    <p>Glanz Salón de Eventos</p>
+    <iframe
+      src="https://www.google.com/maps?q=Glanz+Salón+de+Eventos,+Calle+Presa+Ixtapantongo+825,+Las+Palmas,+CFE,+29040+Tuxtla+Gutiérrez,+Chis.&output=embed"
+      width="100%"
+      height="300"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </section>
+
+  <!-- Separador decorativo -->
+  <div class="separador-decorativo">
+    <svg viewBox="0 0 1200 100" preserveAspectRatio="none" style="width:100%;height:70px;display:block;">
+      <path d="M0,60 Q100,20 200,60 Q300,100 400,60 Q500,20 600,60 Q700,100 800,60 Q900,20 1000,60 Q1100,100 1200,60" 
+        stroke="#fce837" stroke-width="6" fill="none"/>
+      <path d="M0,80 Q100,40 200,80 Q300,120 400,80 Q500,40 600,80 Q700,120 800,80 Q900,40 1000,80 Q1100,120 1200,80" 
+        stroke="#6f5c23" stroke-width="3" fill="none" opacity="0.5"/>
+    </svg>
+  </div>
+
+  <section>
+    <h2>Confirmar Asistencia</h2>
+    <p>Por favor, confirma tu asistencia antes del 1 de noviembre de 2025.</p>
+    <form id="confirmacionForm">
+      <input type="hidden" id="invitacionId" name="invitacionId" value="">
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" class="form-control" required readonly>
+      </div>
+      
+      <div id="opcionesAsistencia">
+        <div class="form-check mb-2">
+          <input class="form-check-input" type="radio" name="asistencia" id="asistireSolo" value="solo" checked>
+          <label class="form-check-label" for="asistireSolo">
+            Asistiré solo/a
+          </label>
+        </div>
+        
+        <div class="form-check mb-2" id="contenedorInvitado">
+          <input class="form-check-input" type="radio" name="asistencia" id="llevareInvitado" value="conInvitado">
+          <label class="form-check-label" for="llevareInvitado">
+            Asistiré con un invitado
+          </label>
+        </div>
+        
+        <div class="form-check mb-3">
+          <input class="form-check-input" type="radio" name="asistencia" id="noAsistire" value="no">
+          <label class="form-check-label" for="noAsistire">
+            No podré asistir
+          </label>
+        </div>
+      </div>
+      
+      <div class="mb-3" id="contenedorNombreInvitado" style="display: none;">
+        <label for="nombreInvitado" class="form-label">Nombre de tu acompañante:</label>
+        <input type="text" id="nombreInvitado" name="nombreInvitado" class="form-control">
+      </div>
+      
+      <button type="submit" class="boton">Confirmar asistencia</button>
+    </form>
+    <div id="mensajeConfirmacion" class="mt-3"></div>
+  </section>
+
+  <!-- Separador decorativo -->
+  <div class="separador-decorativo">
+    <svg viewBox="0 0 1200 100" preserveAspectRatio="none" style="width:100%;height:70px;display:block;">
+      <path d="M0,60 Q100,20 200,60 Q300,100 400,60 Q500,20 600,60 Q700,100 800,60 Q900,20 1000,60 Q1100,100 1200,60" 
+        stroke="#fce837" stroke-width="6" fill="none"/>
+      <path d="M0,80 Q100,40 200,80 Q300,120 400,80 Q500,40 600,80 Q700,120 800,80 Q900,40 1000,80 Q1100,120 1200,80" 
+        stroke="#6f5c23" stroke-width="3" fill="none" opacity="0.5"/>
+    </svg>
+  </div>
+
+  <footer>
+    <p style="color: #fffad2; font-weight: 700;">
+      Con mucho cariño, Roberto & Joselyn 💕
+    </p>
+  </footer>
+
+  <script>
+    // Obtener parámetros de la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const invitacionId = urlParams.get('id');
+    
+    // Cargar datos de la invitación
+    document.addEventListener('DOMContentLoaded', function() {
+      // Establecer el ID de invitación en el formulario
+      if (invitacionId) {
+        document.getElementById('invitacionId').value = invitacionId;
+        
+        // Cargar datos de la invitación desde localStorage
+        const invitaciones = JSON.parse(localStorage.getItem('invitacionesBoda')) || [];
+        const invitacion = invitaciones.find(inv => inv.id === invitacionId);
+        
+        if (invitacion) {
+          // Personalizar mensaje
+          document.getElementById('nombreInvitado').textContent = invitacion.nombre;
+          document.getElementById('nombre').value = invitacion.nombre;
+          
+          if (invitacion.mensajePersonalizado) {
+            document.getElementById('textoMensajePersonalizado').textContent = invitacion.mensajePersonalizado;
+          }
+          
+          // Mostrar/ocultar opción de invitado
+          if (!invitacion.permiteAcompanante) {
+            document.getElementById('contenedorInvitado').style.display = 'none';
+          }
+          
+          // Si ya había confirmado, mostrar el estado
+          if (invitacion.confirmado) {
+            mostrarEstadoConfirmacion(invitacion);
+          }
+        }
+      }
+      
+      // Configurar eventos para mostrar/ocultar campo de nombre de invitado
+      document.querySelectorAll('input[name="asistencia"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+          const contenedorInvitado = document.getElementById('contenedorNombreInvitado');
+          if (this.value === 'conInvitado') {
+            contenedorInvitado.style.display = 'block';
+          } else {
+            contenedorInvitado.style.display = 'none';
+          }
+        });
+      });
+      
+      // Configurar el formulario de confirmación
+      document.getElementById('confirmacionForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        confirmarAsistencia();
+      });
+      
+      // Iniciar cuenta regresiva
+      iniciarCuentaRegresiva();
+    });
+    
+    function mostrarEstadoConfirmacion(invitacion) {
+      const form = document.getElementById('confirmacionForm');
+      form.style.display = 'none';
+      
+      let mensaje = '';
+      if (invitacion.asistencia === 'no') {
+        mensaje = `Hola ${invitacion.nombre}, hemos registrado que no podrás asistir. ¡Lamentamos mucho tu ausencia!`;
+      } else {
+        const asistentes = invitacion.asistencia === 'conInvitado' ? 
+          `tú y ${invitacion.nombreInvitado || 'tu acompañante'}` : 'tú';
+        mensaje = `¡Gracias ${invitacion.nombre}! Hemos confirmado la asistencia de ${asistentes}.`;
+      }
+      
+      document.getElementById('mensajeConfirmacion').innerHTML = `
+        <div class="alert alert-success" role="alert">
+          <h4>¡Confirmación recibida!</h4>
+          <p>${mensaje}</p>
+        </div>
+      `;
+    }
+    
+    function confirmarAsistencia() {
+      const invitacionId = document.getElementById('invitacionId').value;
+      const tipoAsistencia = document.querySelector('input[name="asistencia"]:checked').value;
+      const nombreInvitado = document.getElementById('nombreInvitado').value;
+      
+      // Cargar invitaciones
+      const invitaciones = JSON.parse(localStorage.getItem('invitacionesBoda')) || [];
+      const index = invitaciones.findIndex(inv => inv.id === invitacionId);
+      
+      if (index !== -1) {
+        // Actualizar datos
+        invitaciones[index].confirmado = true;
+        invitaciones[index].asistencia = tipoAsistencia;
+        invitaciones[index].fechaConfirmacion = new Date().toISOString();
+        
+        if (tipoAsistencia === 'conInvitado') {
+          invitaciones[index].nombreInvitado = nombreInvitado;
+          invitaciones[index].asistentes = 2;
+        } else if (tipoAsistencia === 'solo') {
+          invitaciones[index].asistentes = 1;
+        } else {
+          invitaciones[index].asistentes = 0;
+        }
+        
+        // Guardar cambios
+        localStorage.setItem('invitacionesBoda', JSON.stringify(invitaciones));
+        
+        // Mostrar mensaje de confirmación
+        mostrarEstadoConfirmacion(invitaciones[index]);
+        
+        // Enviar confirmación por EmailJS (si está configurado)
+        enviarConfirmacionEmail(invitaciones[index]);
+      } else {
+        document.getElementById('mensajeConfirmacion').innerHTML = `
+          <div class="alert alert-danger" role="alert">
+            Error: No se encontró la invitación. Por favor, contacta a los novios.
+          </div>
+        `;
+      }
+    }
+    
+    function enviarConfirmacionEmail(invitacion) {
+      // Esta función requiere configuración de EmailJS
+      // Puedes implementarla más tarde si decides usar el servicio
+      console.log('Datos para enviar por email:', invitacion);
+    }
+    
+    function iniciarCuentaRegresiva() {
+      const fechaBoda = new Date("Nov 22, 2025 17:00:00").getTime();
+
+      const intervalo = setInterval(() => {
+        const ahora = new Date().getTime();
+        const diferencia = fechaBoda - ahora;
+
+        const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+        const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+        const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown").innerHTML =
+          `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+
+        if (diferencia < 0) {
+          clearInterval(intervalo);
+          document.getElementById("countdown").innerHTML = "¡Hoy es el gran día!";
+        }
+      }, 1000);
+    }
+  </script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
